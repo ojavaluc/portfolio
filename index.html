@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas [Seu Sobrenome] - Desenvolvedor Full-Stack & IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a18;
+            color: #E5E7EB;
+            overflow-x: hidden;
+        }
+        .animated-gradient-bg {
+            background: linear-gradient(-45deg, #1e1b4b, #312e81, #4f46e5, #0ea5e9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            transform: skewX(-25deg);
+            transition: left 0.7s;
+        }
+        .glass-card:hover:before {
+            left: 150%;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.5);
+        }
+        /* Animações de Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-in-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ===== Cabeçalho / Navegação ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white tracking-wider">LUCAS DEV</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Sobre</a>
+                <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Habilidades</a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Projetos</a>
+                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== Hero Section ===== -->
+        <section id="home" class="h-screen flex items-center justify-center text-center animated-gradient-bg relative overflow-hidden">
+             <!-- Efeito de fundo -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="max-w-4xl mx-auto px-6 z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white reveal">
+                    Desenvolvedor Full-stack
+                </h1>
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text mt-2 reveal" style="transition-delay: 200ms;">
+                    Transformando Dados em Aplicações Inteligentes.
+                </h2>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto reveal" style="transition-delay: 400ms;">
+                    Construo soluções web completas e escaláveis, com um foco apaixonado em Visão Computacional e Inteligência Artificial. Explore o meu trabalho abaixo.
+                </p>
+                <div class="mt-10 reveal" style="transition-delay: 600ms;">
+                    <a href="#projects" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/50 transform hover:scale-105">
+                        Conheça Meus Projetos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Sobre Mim ===== -->
+        <section id="about" class="section">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">Sobre Mim</h2>
+                        <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+                            <p>
+                                Minha jornada na tecnologia começou de forma única, com uma base sólida em telecomunicações que me deu uma visão prática sobre redes e infraestrutura. Essa experiência despertou minha paixão por resolver problemas complexos, o que me levou a mergulhar no desenvolvimento de software.
+                            </p>
+                            <p>
+                                Com a base fundamental de Ciência da Computação do curso **CS50 de Harvard**, hoje atuo como desenvolvedor full-stack, construindo soluções completas que unem o poder do back-end em **Python** com a interatividade do front-end em **JavaScript**. Atualmente, meu foco está na intersecção entre desenvolvimento web e **Inteligência Artificial**, explorando como a Visão Computacional pode gerar insights e automatizar processos.
+                            </p>
+                        </div>
+                    </div>
+                     <div class="reveal" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/500x500/1e1b4b/a78bfa?text=Lucas" alt="Foto de Lucas" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Habilidades Técnicas ===== -->
+        <section id="skills" class="section bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text reveal">Habilidades Técnicas</h2>
+                <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    
+                    <!-- Habilidades com Ícones SVG -->
+                    <div class="glass-card p-6 reveal">
+                         <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Python & IA</h3>
+                        <p class="text-gray-400 text-sm mt-1">YOLOv8, OpenCV, Pandas, Flask</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 100ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Front-End</h3>
+                        <p class="text-gray-400 text-sm mt-1">JavaScript, React, Tailwind CSS</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 200ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Back-End</h3>
+                        <p class="text-gray-400 text-sm mt-1">APIs RESTful, Node.js</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 300ms;">
+                       <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7s8 4 8 4s8-4 8-4M12 11v4"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Bancos de Dados</h3>
+                        <p class="text-gray-400 text-sm mt-1">SQL (PostgreSQL), NoSQL</p>
+                    </div>
+                     <div class="glass-card p-6 reveal" style="transition-delay: 400ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Java</h3>
+                        <p class="text-gray-400 text-sm mt-1">Desenvolvimento Android</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 500ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 00-9-9m9 9h-9"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Redes</h3>
+                        <p class="text-gray-400 text-sm mt-1">Protocolos (RTSP), Firewalls, NAT</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 600ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Ferramentas de Vídeo</h3>
+                        <p class="text-gray-400 text-sm mt-1">FFMPEG, OpenCV</p>
+                    </div>
+                    <div class="glass-card p-6 reveal" style="transition-delay: 700ms;">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20v-6h4v6m2-14v14m-10-14v14M3 8h18M5 3v2m14-2v2M5 21h14"></path></svg>
+                        <h3 class="font-bold text-lg text-white">Ferramentas Dev</h3>
+                        <p class="text-gray-400 text-sm mt-1">Git, Docker, VS Code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Projetos ===== -->
+        <section id="projects" class="section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text reveal">Projetos em Destaque</h2>
+
+                <!-- Projeto Principal: Fluxo IA -->
+                <div class="glass-card overflow-hidden md:flex reveal">
+                    <div class="md:w-1/3 p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-white">Fluxo IA: Análise de Vídeo com Inteligência Artificial</h3>
+                        <p class="mt-4 text-gray-300">
+                            Uma plataforma completa de Visão Computacional que transforma streams de vídeo de câmaras comuns em uma fonte de Business Intelligence. O sistema deteta e rastreia objetos em tempo real, gerando métricas como contagem de pessoas, tempo de permanência e análise de fluxo em zonas de interesse.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                            <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">YOLOv8</span>
+                            <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">OpenCV</span>
+                            <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Dash</span>
+                            <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Pandas</span>
+                        </div>
+                         <a href="https://github.com/dheiver2/Stream-Detection-API" target="_blank" class="mt-8 inline-block text-sky-400 font-semibold hover:underline">
+                            Ver no GitHub &rarr; <!-- Edite o link para o seu repositório -->
+                        </a>
+                    </div>
+                    <div class="md:w-2/3">
+                        <img src="https://placehold.co/800x500/111827/60a5fa?text=Demonstração+do+Dashboard+Fluxo+IA" alt="Demonstração do Dashboard do Fluxo IA" class="object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contato ===== -->
+        <section id="contact" class="section bg-gray-900/50 text-center">
+            <div class="container mx-auto px-6 reveal">
+                <h2 class="text-4xl font-bold gradient-text">Vamos Construir Algo Incrível Juntos?</h2>
+                <p class="mt-6 text-lg text-gray-400 max-w-xl mx-auto">
+                    Estou sempre aberto a novas oportunidades e desafios. Se você tem uma ideia, um projeto ou uma vaga em mente, adoraria conversar.
+                </p>
+                <div class="mt-10">
+                     <a href="mailto:seu-email@exemplo.com" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/50 transform hover:scale-105">
+                        Entre em Contato <!-- Edite com seu e-mail -->
+                    </a>
+                </div>
+                <div class="mt-16 flex justify-center space-x-8">
+                     <a href="https://linkedin.com/in/seu-usuario" target="_blank" class="text-gray-400 hover:text-sky-400 transition text-lg">LinkedIn</a>
+                     <a href="https://github.com/seu-usuario" target="_blank" class="text-gray-400 hover:text-sky-400 transition text-lg">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script para Animações de Scroll -->
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { // O elemento aparece quando está a 100px de entrar na tela
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Ativa a animação para os elementos que já estão na tela ao carregar
+        document.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
+</body>
+</html>
+
