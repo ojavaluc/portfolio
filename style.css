@@ -3,9 +3,9 @@ body {
     background-color: #0c0a18;
     color: #E5E7EB;
     overflow-x: hidden;
-    overflow-wrap: break-word; /* Melhora a quebra de palavras longas */
 }
 
+/* ===== Animação de Fundo e Texto Gradiente ===== */
 .animated-gradient-bg {
     background: linear-gradient(-45deg, #1e1b4b, #312e81, #4f46e5, #0ea5e9);
     background-size: 400% 400%;
@@ -19,17 +19,35 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    background: linear-gradient(to right, #60a5fa, #0ea5e9);
     -webkit-background-clip: text;
-    background-clip: text; /* Propriedade padrão para máxima compatibilidade */
+    background-clip: text; /* <--- ADICIONE ESTA LINHA */
     -webkit-text-fill-color: transparent;
 }
 
+/* Efeito de digitação */
+#typing-effect::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+/* ===== Estrutura e Navegação ===== */
 .section {
     padding-top: 8rem;
     padding-bottom: 8rem;
 }
 
+.nav-link.active {
+    color: #38bdf8; /* Cor do céu-400 de Tailwind */
+}
+
+/* ===== Cards de Vidro (Glassmorphism) ===== */
 .glass-card {
     background: rgba(31, 41, 55, 0.4);
     backdrop-filter: blur(12px);
@@ -62,7 +80,35 @@ body {
     border-color: rgba(96, 165, 250, 0.5);
 }
 
-/* Animações de Scroll */
+/* Tags de tecnologia nos cards de projeto */
+.tech-tag {
+    display: inline-block;
+    background-color: rgba(56, 189, 248, 0.15);
+    color: #7dd3fc;
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600; /* font-semibold */
+    padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
+    border-radius: 9999px; /* rounded-full */
+}
+
+/* ===== Formulário de Contato ===== */
+.form-input {
+    width: 100%;
+    background-color: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #E5E7EB;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
+/* ===== Animações de Scroll ===== */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -73,12 +119,3 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ===== NOVO: Regras para Responsividade em Dispositivos Móveis ===== */
-@media (max-width: 768px) {
-    .section {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
-}
-
