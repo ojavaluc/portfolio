@@ -119,3 +119,84 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =================================== */
+/* ===== Estilos da Timeline de Formação ===== */
+/* =================================== */
+
+.timeline-line {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 50%;
+    width: 3px;
+    background-color: rgba(31, 41, 55, 0.8); /* Cor mais escura para a linha */
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding-bottom: 2.5rem; /* Espaçamento entre os itens */
+}
+
+/* Posiciona os itens alternadamente */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 2.5rem;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 2.5rem;
+}
+
+/* O ponto na linha do tempo */
+.timeline-dot {
+    position: absolute;
+    top: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: #0c0a18; /* Cor de fundo do body */
+    border: 3px solid #38bdf8; /* Cor de destaque */
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -0.625rem; /* (Largura do ponto / 2) * -1 */
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -0.625rem; /* (Largura do ponto / 2) * -1 */
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* ===== Responsividade da Timeline para Dispositivos Móveis ===== */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 0.625rem; /* Move a linha para a esquerda */
+        transform: translateX(0);
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 2.5rem;
+        padding-right: 0;
+        text-align: left !important; /* Força o texto para a esquerda */
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0%; /* Reseta o posicionamento do item par */
+    }
+
+    .timeline-dot {
+        left: 0; /* Alinha todos os pontos à linha */
+    }
+}
