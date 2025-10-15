@@ -1,202 +1,80 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0c0a18;
-    color: #E5E7EB;
-    overflow-x: hidden;
-}
+// ====== Animação de Revelar ao Rolar ======
+const revealElements = document.querySelectorAll('.reveal');
 
-/* ===== Animação de Fundo e Texto Gradiente ===== */
-.animated-gradient-bg {
-    background: linear-gradient(-45deg, #1e1b4b, #312e81, #4f46e5, #0ea5e9);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
+const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+};
 
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.gradient-text {
-    background: linear-gradient(to right, #60a5fa, #0ea5e9);
-    -webkit-background-clip: text;
-    background-clip: text; /* <--- ADICIONE ESTA LINHA */
-    -webkit-text-fill-color: transparent;
-}
-
-/* Efeito de digitação */
-#typing-effect::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+window.addEventListener('scroll', revealOnScroll);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
 
 
-/* ===== Estrutura e Navegação ===== */
-.section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-}
+// ====== Efeito de Digitação na Hero Section ======
+const typingElement = document.getElementById('typing-effect');
+const words = ["Desenvolvedor Full-Stack", "Especialista em IA", "Criador de Soluções Web"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-.nav-link.active {
-    color: #38bdf8; /* Cor do céu-400 de Tailwind */
-}
-
-/* ===== Cards de Vidro (Glassmorphism) ===== */
-.glass-card {
-    background: rgba(31, 41, 55, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.75rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.glass-card:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
-    transform: skewX(-25deg);
-    transition: left 0.7s;
-}
-
-.glass-card:hover:before {
-    left: 150%;
-}
-
-.glass-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.5);
-}
-
-/* Tags de tecnologia nos cards de projeto */
-.tech-tag {
-    display: inline-block;
-    background-color: rgba(56, 189, 248, 0.15);
-    color: #7dd3fc;
-    font-size: 0.75rem; /* text-xs */
-    font-weight: 600; /* font-semibold */
-    padding: 0.25rem 0.625rem; /* px-2.5 py-1 */
-    border-radius: 9999px; /* rounded-full */
-}
-
-/* ===== Formulário de Contato ===== */
-.form-input {
-    width: 100%;
-    background-color: rgba(31, 41, 55, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
-    color: #E5E7EB;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
-}
-
-/* ===== Animações de Scroll ===== */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-in-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =================================== */
-/* ===== Estilos da Timeline de Formação ===== */
-/* =================================== */
-
-.timeline-line {
-    position: absolute;
-    top: 1rem;
-    bottom: 1rem;
-    left: 50%;
-    width: 3px;
-    background-color: rgba(31, 41, 55, 0.8); /* Cor mais escura para a linha */
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding-bottom: 2.5rem; /* Espaçamento entre os itens */
-}
-
-/* Posiciona os itens alternadamente */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    padding-right: 2.5rem;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    padding-left: 2.5rem;
-}
-
-/* O ponto na linha do tempo */
-.timeline-dot {
-    position: absolute;
-    top: 0.5rem;
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: #0c0a18; /* Cor de fundo do body */
-    border: 3px solid #38bdf8; /* Cor de destaque */
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.timeline-item:nth-child(odd) .timeline-dot {
-    right: -0.625rem; /* (Largura do ponto / 2) * -1 */
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    left: -0.625rem; /* (Largura do ponto / 2) * -1 */
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-
-
-/* ===== Responsividade da Timeline para Dispositivos Móveis ===== */
-@media (max-width: 768px) {
-    .timeline-line {
-        left: 0.625rem; /* Move a linha para a esquerda */
-        transform: translateX(0);
-    }
+const type = () => {
+    const currentWord = words[wordIndex];
     
-    .timeline-item {
-        width: 100%;
-        padding-left: 2.5rem;
-        padding-right: 0;
-        text-align: left !important; /* Força o texto para a esquerda */
+    if (isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
     }
 
-    .timeline-item:nth-child(even) {
-        left: 0%; /* Reseta o posicionamento do item par */
+    // Se a palavra terminou de ser digitada
+    if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => isDeleting = true, 2000); // Pausa antes de apagar
+    } 
+    // Se a palavra terminou de ser apagada
+    else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
     }
 
-    .timeline-dot {
-        left: 0; /* Alinha todos os pontos à linha */
+    const typingSpeed = isDeleting ? 100 : 200;
+    setTimeout(type, typingSpeed);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (typingElement) {
+        setTimeout(type, 500); // Inicia após um pequeno atraso
     }
-}
+});
+
+
+// ====== Navegação Ativa ao Rolar ======
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#nav-menu a.nav-link');
+
+const activateMenuAtCurrentSection = () => {
+    const fromTop = window.scrollY + 80; // offset para o header
+
+    sections.forEach(section => {
+        if (
+            section.offsetTop <= fromTop &&
+            section.offsetTop + section.offsetHeight > fromTop
+        ) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${section.id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+};
+
+window.addEventListener('scroll', activateMenuAtCurrentSection);
+document.addEventListener('DOMContentLoaded', activateMenuAtCurrentSection);
