@@ -213,3 +213,12 @@ h1, h2, h3, h4, h5, p, a {
     -ms-hyphens: auto;
     hyphens: auto;
 }
+/* =======================================
+  ===== CORREÇÃO ALTURA TIMELINE =====
+  =======================================
+  Define uma altura mínima para os cards da timeline de Formação
+  para que todos fiquem com um tamanho uniforme.
+*/
+#formation .timeline-item .glass-card {
+  min-height: 22rem; /* Aprox. 352px */
+}
