@@ -200,3 +200,16 @@ body {
         left: 0; /* Alinha todos os pontos à linha */
     }
 }
+/* Garante que o overflow seja contido na página inteira */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Força a quebra de palavras muito longas */
+h1, h2, h3, h4, h5, p, a {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
