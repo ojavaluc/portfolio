@@ -78,3 +78,19 @@ const activateMenuAtCurrentSection = () => {
 
 window.addEventListener('scroll', activateMenuAtCurrentSection);
 document.addEventListener('DOMContentLoaded', activateMenuAtCurrentSection);
+// Captura os elementos do DOM
+const btnMobile = document.getElementById('btn-mobile');
+const menuMobile = document.getElementById('menu-mobile');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+// Alterna a visibilidade do menu ao clicar no botão hambúrguer
+btnMobile.addEventListener('click', () => {
+    menuMobile.classList.toggle('hidden');
+});
+
+// Fecha o menu automaticamente quando um link for clicado
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuMobile.classList.add('hidden');
+    });
+});
