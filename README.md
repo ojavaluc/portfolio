@@ -44,10 +44,12 @@ Solução completa de loja virtual construída com arquitetura moderna, incluind
 
 ---
 
-## ⚙️ Como rodar este projeto localmente
+## 📫 Como me encontrar
 
-Se quiser clonar este repositório e visualizar o código do portfólio na sua máquina, siga os passos:
+Estou sempre aberto a novas conexões, oportunidades no desenvolvimento de software e troca de conhecimentos!
 
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/ojavaluc/portfolio.git](https://github.com/ojavaluc/portfolio.git)
+- **LinkedIn:** [Meu Perfil no LinkedIn](INSERIR_SEU_LINK_DO_LINKEDIN_AQUI)
+- **GitHub:** [@ojavaluc](https://github.com/ojavaluc)
+
+---
+*Transformando Dados em Aplicações Inteligentes.*
