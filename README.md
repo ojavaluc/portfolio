@@ -48,9 +48,9 @@ Solução completa de loja virtual construída com arquitetura moderna, incluind
 
 Estou sempre aberto a novas conexões, oportunidades no desenvolvimento de software e troca de conhecimentos!
 
-- **LinkedIn:** [Meu Perfil no LinkedIn](www.linkedin.com/in/lucas-freitas-ba3113226
+- **LinkedIn:** [Meu Perfil no LinkedIn](www.linkedin.com/in/lucas-freitas-ba3113226)
 
-)
+
 - **GitHub:** [@ojavaluc](https://github.com/ojavaluc)
 
 ---
