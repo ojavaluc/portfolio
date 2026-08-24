@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', revealOnScroll);
 
 // ====== Efeito de Digitação na Hero Section ======
 const typingElement = document.getElementById('typing-effect');
-const words = ["Dev Full-Stack", "Especialista em IA", "Ciência de Dados"];
+const words = ["Dev Full-Stack", "Especialista em IA", "Ciência de Dados", "NOC & Redes"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
