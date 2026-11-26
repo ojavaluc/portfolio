@@ -1,57 +1,23 @@
-# 💻 Meu Portfólio | Lucas Alves de Freitas
+# Portfólio · Lucas Freitas
 
-Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória, habilidades e projetos na área de desenvolvimento de software, com foco em Backend, Inteligência Artificial e Ciência de Dados.
+Site pessoal em [lucasfullstack.com.br](https://lucasfullstack.com.br).
 
-🔗 **Acesse o site em produção:** [lucasfullstack.com.br](https://lucasfullstack.com.br/)
+Feito em Next.js com exportação estática, a partir do template
+[dillionverma/portfolio](https://github.com/dillionverma/portfolio) (Magic UI, licença MIT — ver `LICENSE-template-magicui`).
 
----
+## Editar o conteúdo
 
-## 🎯 Sobre Mim
+Todo o texto (sobre, experiência, fotos, formação, ferramentas e links) fica em `src/data/resume.tsx`.
+Imagens ficam em `public/img/`.
 
-Minha jornada na tecnologia começou na infraestrutura e telecomunicações, atuando com liderança de NOC e redes. Essa vivência prática me deu uma base sólida para resolver problemas complexos e arquitetar sistemas que funcionam no mundo real.
+## Rodar localmente
 
-Hoje, aliando minha formação em **Ciência de Dados (UFMS)** e **Análise e Desenvolvimento de Sistemas (Newton Paiva)**, foco na construção de soluções escaláveis no Back-end (Python e Java) e na extração de insights valiosos através da Visão Computacional (IA).
+```bash
+pnpm install
+pnpm dev
+```
 
----
+## Publicar
 
-## 🛠️ Tecnologias e Habilidades
-
-Aqui estão as principais ferramentas que utilizo no meu dia a dia:
-
-- **Linguagens:** Python, Java, JavaScript
-- **Backend & APIs:** Flask, Node.js, RESTful APIs
-- **Dados & Inteligência Artificial:** YOLOv8, OpenCV, Pandas, Dash
-- **Front-end:** React, Tailwind CSS, HTML5/CSS3
-- **Bancos de Dados:** PostgreSQL, SQLite, NoSQL
-- **Infraestrutura & DevOps:** Docker, AWS, Kubernetes, Git, Zabbix, Grafana
-- **Redes & Vídeo:** FFMPEG, Protocolos RTSP, Firewalls, NAT
-
----
-
-## 🚀 Projetos em Destaque
-
-### 1. Fluxo IA: Monitoramento de Tráfego
-Plataforma de Visão Computacional projetada para detectar e rastrear veículos e pedestres em tempo real. O sistema utiliza modelos avançados para gerar métricas de Business Intelligence aplicadas à mobilidade.
-* **Stack:** Python, YOLOv8, OpenCV, Dash
-
-### 2. App de Rastreamento de Hábitos (Android)
-Aplicativo mobile nativo desenvolvido para gerenciamento de tarefas e hábitos diários, com foco em usabilidade, notificações locais e armazenamento otimizado.
-* **Stack:** Java, Android SDK, SQLite
-
-### 3. E-commerce Moderno
-Solução completa de loja virtual construída com arquitetura moderna, incluindo gerenciamento de estado global, carrinho de compras e integração segura com API de pagamento.
-* **Stack:** React, Node.js, PostgreSQL, Tailwind CSS
-
----
-
-## 📫 Como me encontrar
-
-Estou sempre aberto a novas conexões, oportunidades no desenvolvimento de software e troca de conhecimentos!
-
-- **LinkedIn:** [Meu Perfil no LinkedIn](www.linkedin.com/in/lucas-freitas-ba3113226)
-
-
-- **GitHub:** [@ojavaluc](https://github.com/ojavaluc)
-
----
-*Transformando Dados em Aplicações Inteligentes.*
+O workflow `.github/workflows/deploy.yml` gera o site (`out/`) e publica no GitHub Pages a cada push na `main`.
+Em **Settings → Pages**, a fonte precisa estar como **GitHub Actions**. O domínio vem de `public/CNAME`.
